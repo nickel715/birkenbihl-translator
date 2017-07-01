@@ -1,0 +1,16 @@
+{
+  "name": "birkenbihl-translator",
+  "version": "1.0.0",
+  "description": "Word by word translation",
+  "main": "main.js",
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "google-translate-api": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
