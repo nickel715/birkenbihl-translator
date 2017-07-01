@@ -1,21 +1,16 @@
 const translate = require('google-translate-api');
 var Table = require('cli-table');
 
-var input = 'Я всё детство о ней мечтал';
+var input = process.argv[2];
 var wordsToTranslate = input.split(' ');
 var translation = [];
-
-//for (var i = 0; i < myArray.length; i++)
-
 var i = 0;
 
 doTranslation();
 
 function doTranslation() {
     translate(wordsToTranslate[i], {from: 'ru', to: 'de'}).then(res => {
-        console.log(res.text);
         translation.push(res.text);
-        console.log('debug');
         i++;
         if (wordsToTranslate.length > i) {
             doTranslation();
@@ -35,7 +30,6 @@ function finish() {
              , 'right': '' , 'right-mid': '' , 'middle': ' ' },
       style: { 'padding-left': 0, 'padding-right': 0 }
     });
-    console.log(translation);
     table.push(wordsToTranslate, translation);
     console.log(table.toString());
 }
